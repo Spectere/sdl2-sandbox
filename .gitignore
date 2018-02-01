@@ -1,0 +1,24 @@
+# This file should contain anything that you do not want to appear in your git
+# repository.
+#
+# If you are not using git, please delete this file.
+
+# This prevents system-specific Makefile overrides from being committed to your
+# repository.
+Makefile.override
+
+# This prevents binary output from being included in your repository.
+bin/
+obj/
+
+# This will prevent large (or copyrighted, if you're porting a game engine that
+# requires proprietary data) data from being included in your repository.
+assets/
+
+# Sublime Text stores session state information to its workspace files. This
+# can potentially leak sensitive information. This file can be excluded from
+# the respository without affecting the project's functionality.
+*.sublime-workspace
+
+# If there's a Mercurial repo in the current directory, be sure to exclude it.
+.hg
