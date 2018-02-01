@@ -1,26 +1,12 @@
-# This file should contain anything that you do not want to appear in your
-# Mercurial repository.
-#
-# If you are not using Mercurial, please delete this file.
-
-# This prevents system-specific Makefile overrides from being committed to your
-# repository.
+# System-specific Makefile overrides.
 Makefile.override
 
-# This prevents binary output from being included in your repository.
+# Binary/intermediate output files.
 bin/
 obj/
 
-# This will prevent large (or copyrighted, if you're porting a game engine that
-# requires proprietary data) data from being included in your repository.
+# Exclude large (and possible proprietary) assets.
 assets/
 
-# Sublime Text stores session state information to its workspace files. This
-# can potentially leak sensitive information. This file can be excluded from
-# the respository without affecting the project's functionality.
+# Potentially-sensitive session data.
 .sublime-workspace
-
-# Exclude any git files, just in case they're still in the directory.
-.git
-.gitattributes
-.gitignore
