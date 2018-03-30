@@ -11,6 +11,7 @@ MKDIR     = mkdir -p
 
 OBJDIR    = ./obj
 BINDIR    = ./bin
+RESDIR    = ./resources
 ASSETDIR  = ./assets
 
 # System-specific Makefile overrides.

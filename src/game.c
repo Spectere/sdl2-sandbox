@@ -2,18 +2,18 @@
 
 #include <SDL.h>
 
+#include "console.h"
 #include "defs.h"
 #include "event.h"
-#include "video.h"
 
 void game_loop() {
 	event_result_t ev = EV_NONE;
 	SDL_bool running = SDL_TRUE;
 
-	Uint8 r = 0, g = 64, b = 128;
-	int i;
-
 	while(running) {
+		Uint8 i = 0;
+		int x, y;
+
 		ev = event_process();
 
 		switch(ev) {
@@ -22,12 +22,13 @@ void game_loop() {
 			break;
 		}
 
-		/* Replace this with something niftier. :) */
-		r++; g--; b;
-		for(i = 0; i < RENDER_WIDTH * RENDER_HEIGHT; i++) {
-			pixels[i] = RGB(r++, g++, b++);
+		for(y = 0; y < CONSOLE_HEIGHT; y++) {
+			for(x = 0; x < CONSOLE_WIDTH; x++) {
+				CONSOLE(x, y).ch = i;
+				CONSOLE(x, y).col = i++;
+			}
 		}
 
-		video_update();
+		console_update();
 	}
 }
